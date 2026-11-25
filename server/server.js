@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 
 import {
   notFound,
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/subscriptions", subscriptionRoutes);
 
 // Error Handling Middleware
 app.use(notFound);
